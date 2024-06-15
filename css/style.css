@@ -25,6 +25,17 @@
     opacity: 0.6;
 }
 
+.selectButton {
+    background-color: skyblue;
+    border: 1px solid lavender;
+    margin: 8px;
+    transition-duration: 0.4s;
+}
+
+.selectButton:hover {
+    background-color: white;
+}
+
 #body {
     display: flex;
     justify-content: center;

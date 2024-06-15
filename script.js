@@ -11,6 +11,10 @@ sizeButton.addEventListener('click', () => {
     const gridSize = sizeInput.value;
     sizeInput.value = '';
     
+    if (gridSize >= 100){
+        alert('Input of ' + gridSize + ' is above the maximum value of 100, try selecting a smaller value 😃');
+        return;
+    }
 
     for (let i=0; i<gridSize; i++){
         const gridRow = document.createElement("div");
