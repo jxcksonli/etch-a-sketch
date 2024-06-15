@@ -16,10 +16,20 @@
     justify-content: center;
 }
 
+#selectsize {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightskyblue;
+    border-radius: 1%;
+    opacity: 0.4;
+}
+
 #body {
     display: flex;
     justify-content: center;
     background-color: lightskyblue;
+    flex-direction: column;
     opacity: 0.8;
 }
 
