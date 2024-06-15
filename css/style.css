@@ -2,12 +2,32 @@
     font-family: Helvetica;
 }
 
-footer {
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    background-color: lightskyblue;
+    border-radius: 1%;
+    opacity: 0.6;
+    font-size: 64px;
+    justify-content: center;
+}
+
+#body {
+    display: flex;
+    justify-content: center;
+    background-color: lightskyblue;
+    opacity: 0.8;
+}
+
+#footer {
     display: flex;
     background-color: lightskyblue;
     border-radius: 1%;
     opacity: 0.6;
     font-size: 32px;
-    height: 100px;
     justify-content: center;
 }
