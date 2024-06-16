@@ -10,7 +10,7 @@ sizeButton.addEventListener('click', () => {
     const gridSize = sizeInput.value;
     sizeInput.value = '';
     
-    if (gridSize >= 100){
+    if (gridSize > 100){
         alert('Input of ' + gridSize + ' is above the maximum value of 100, try selecting a smaller value 😃');
         return;
     }
@@ -55,7 +55,19 @@ function colourGrid() {
 
 function addColourOptions(){
     const colourOptions = document.createElement("div");
-    colourOptions.style.cssText = "display: flex; flex-direction: column; justify-content: center;"
+    colourOptions.style.cssText = "display: flex; flex-direction: row; justify-content: center;";
+
+
+    const redButton = document.createElement("button");
+    const orangeButton = document.createElement("button");
+    const yellowButton = document.createElement("button");
+    const limeButton = document.createElement("button");
+    const greenButton = document.createElement("button");
+    const skyButton = document.createElement("button");
+    const blueButton = document.createElement("button");
+    const purpleButton = document.createElement("button");
+    const pinkButton = document.createElement("button");
+
 
     return
 };
@@ -80,10 +92,10 @@ function addOpacityOptions(){
         const gridElements = document.querySelectorAll(".gridElement");
         
         gridElements.forEach((gridElement) => {
-            if (gridElement.style.opacity <= 0.9){
-                gridElement.style.opacity = Number(gridElement.style.opacity) + 0.1;
-            }
-        ;
+            let opacity = Number(gridElement.style.opacity);
+            if (opacity <= 0.9){
+                gridElement.style.opacity = opacity + 0.1;
+            };
         })
     });
 
@@ -94,10 +106,10 @@ function addOpacityOptions(){
 
     dimButton.addEventListener('click', () => {
         const gridElements = document.querySelectorAll(".gridElement");
-        
         gridElements.forEach((gridElement) => {
-            if (gridElement.style.opacity >= 0.1){
-                gridElement.style.opacity = Number(gridElement.style.opacity) - 0.1;;
+            let opacity = Number(gridElement.style.opacity);
+            if (opacity >= 0.1){
+                gridElement.style.opacity = opacity - 0.1;;
             };
         })
     });
