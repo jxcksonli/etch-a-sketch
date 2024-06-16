@@ -16,6 +16,8 @@ sizeButton.addEventListener('click', () => {
         return;
     }
 
+    const squareLength = 960 / gridSize;
+
     for (let i=0; i<gridSize; i++){
         const gridRow = document.createElement("div");
         gridRow.style.cssText = "display: flex; flex-direction: row;"
@@ -23,7 +25,8 @@ sizeButton.addEventListener('click', () => {
         for (let j=0; j<gridSize; j++){
             const gridElement = document.createElement("div");
             gridElement.classList.add("gridElement");
-            gridElement.textContent = "Test";
+            gridElement.style.cssText = "width: " + squareLength + "px; height: " + squareLength + "px";
+
             gridRow.appendChild(gridElement);
         
         }
