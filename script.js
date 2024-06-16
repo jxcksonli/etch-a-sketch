@@ -6,7 +6,6 @@ const gridSize = 0;
 sizeButton.addEventListener('click', () => {
     grid.textContent = '';
     // Sets content to be empty so the grid reset
-
     const gridSize = sizeInput.value;
     sizeInput.value = '';
     
@@ -19,7 +18,7 @@ sizeButton.addEventListener('click', () => {
     addColourOptions();
     addOpacityOptions();
     setUpGrid(gridSize, squareLength);  
-    colourGrid();
+    colourGrid("black");
 });
 
 function setUpGrid(gridSize,squareLength){
@@ -36,40 +35,42 @@ function setUpGrid(gridSize,squareLength){
         }
         grid.appendChild(gridRow);
     }
-
     return
 };
 
-function colourGrid() {
+function colourGrid(colour) {
     const gridElements = document.querySelectorAll(".gridElement");
-    
     gridElements.forEach((gridElement) => {
         // For each grid element, we add a 'mouseenter' listener
         gridElement.addEventListener("mouseenter", () => {
-            gridElement.style.backgroundColor = "purple";
+            gridElement.style.backgroundColor = colour;
         });
     })
-
-    return
 };
 
 function addColourOptions(){
+    const colourOptionsText = document.createElement("p");
+    colourOptionsText.textContent = "Select a column below by clicking it"
+
     const colourOptions = document.createElement("div");
-    colourOptions.style.cssText = "display: flex; flex-direction: row; justify-content: center;";
+    colourOptions.style.cssText = "display: flex; flex-direction: row; justify-content: center; gap: 3px;";
 
 
-    const redButton = document.createElement("button");
-    const orangeButton = document.createElement("button");
-    const yellowButton = document.createElement("button");
-    const limeButton = document.createElement("button");
-    const greenButton = document.createElement("button");
-    const skyButton = document.createElement("button");
-    const blueButton = document.createElement("button");
-    const purpleButton = document.createElement("button");
-    const pinkButton = document.createElement("button");
+    const colors = ["#E8CACA", "#FFE5A8", "#F8FF97", "#BCFFA4", "#A6FFD3", "#B9E3FF", "#C1CCFF", "#E4CFFF", "#F1CEF4"];
+    colors.forEach(color => {
+        const button = document.createElement("button");
+        button.style.backgroundColor = color;
+        button.classList.add("colourButton");
+        button.setAttribute("id", color);
+        colourOptions.appendChild(button);
 
+        button.addEventListener("click", () => {
+            colourGrid(color);
+        });
+    });
 
-    return
+    grid.appendChild(colourOptionsText);
+    grid.appendChild(colourOptions);
 };
 
 function addOpacityOptions(){

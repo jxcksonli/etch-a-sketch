@@ -37,6 +37,11 @@
     background-color: white;
 }
 
+.colourButton {
+    width: 60px;
+    height: 40px;
+}
+
 #body {
     display: flex;
     justify-content: center;
