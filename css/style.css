@@ -49,11 +49,11 @@
 
 .gridElement {
     background: white;
-    transition-duration: 0s;
+    transition-duration: .5s;
 }
 
 .gridElement:hover {
-    background-color: red;
+    background-color: purple;
 }
 
 
